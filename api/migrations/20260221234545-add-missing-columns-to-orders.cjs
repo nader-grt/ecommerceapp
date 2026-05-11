@@ -5,7 +5,7 @@ module.exports = {
 
     const table = await queryInterface.describeTable('Orders');
 
-    // 🟢 rename ONLY if needed
+    //rename ONLY if needed
     if (table.userId && !table.customerId) {
       await queryInterface.renameColumn(
         'Orders',
@@ -14,7 +14,7 @@ module.exports = {
       );
     }
 
-    // 🟢 add totalAmount only if not exists
+    //  add totalAmount only if not exists
     if (!table.totalAmount) {
       await queryInterface.addColumn('Orders', 'totalAmount', {
         type: Sequelize.DOUBLE,
@@ -23,7 +23,6 @@ module.exports = {
       });
     }
 
-    // 🟢 add status only if not exists
     if (!table.status) {
       await queryInterface.addColumn('Orders', 'status', {
         type: Sequelize.ENUM(
@@ -31,7 +30,7 @@ module.exports = {
           'paid',
           'shipped',
           'delivered',
-          'cancelled'
+          'notdelivered'
         ),
         allowNull: false,
         defaultValue: 'pending',

@@ -162,11 +162,7 @@ run  xampp
 
 add cascade 
 npx sequelize-cli migration:generate --name add-cascade-to-variants-productid
-Channels
 
-npx sequelize-cli migration:generate --name create-Channels
-SKUstable
-npx sequelize-cli migration:generate --name create-tableSkus
 
 
 removunique address fror user 

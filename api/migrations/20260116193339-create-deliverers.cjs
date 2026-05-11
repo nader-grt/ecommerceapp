@@ -24,12 +24,12 @@ module.exports = {
         onUpdate: 'CASCADE',
       },
 
-      /**
+      
        isActive: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
       },
-       */
+       
       carType: {
         type: Sequelize.STRING,
         allowNull: false,

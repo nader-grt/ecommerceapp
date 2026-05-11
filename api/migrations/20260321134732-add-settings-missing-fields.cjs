@@ -4,13 +4,9 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
 
-    // 🏢 Multi-tenant support
-    // await queryInterface.addColumn('Settings', 'companyId', {
-    //   type: Sequelize.INTEGER,
-    //   allowNull: true, // خليه true إذا عندك بيانات قديمة
-    // });
+ 
 
-    // 🌍 System settings
+    // System settings
     await queryInterface.addColumn('Settings', 'currency', {
       type: Sequelize.STRING,
       allowNull: false,
@@ -35,13 +31,13 @@ module.exports = {
       defaultValue: 0,
     });
 
-    // ⚙️ status control
+    //  status control
     await queryInterface.addColumn('Settings', 'isActive', {
       type: Sequelize.BOOLEAN,
       defaultValue: true,
     });
 
-    // 🔐 audit fields
+    //  audit fields
     await queryInterface.addColumn('Settings', 'createdBy', {
       type: Sequelize.INTEGER,
       allowNull: true,
@@ -52,7 +48,7 @@ module.exports = {
       allowNull: true,
     });
 
-    // 🚀 index for performance (important for SaaS)
+    //  index for performance (important for SaaS)
    // await queryInterface.addIndex('Settings', ['companyId']);
   },
 

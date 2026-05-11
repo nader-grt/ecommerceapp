@@ -1,6 +1,6 @@
 import { Sequelize, DataTypes, Model } from "sequelize";
 
-export type ProductType = "SIMPLE" | "VARIABLE";
+
 export  default interface IProduct
 {
   id?:number ;
@@ -9,7 +9,7 @@ export  default interface IProduct
   nameImage:string ;
   categoryId?: number;
   supplierId?:number;
-  type: ProductType | any;
+ 
   isDeleted?: boolean; // NEW
 }
 
@@ -21,7 +21,7 @@ implements IProduct{
      public name!:string   ;
      public price!:number ;
      public nameImage!: string;
-     public type!: ProductType; // 
+     
      public isDeleted?: boolean;
     
 
@@ -91,11 +91,6 @@ export  function ProductModel(sequelize:Sequelize)
               supplierId: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
-              },
-              type: {
-                type: DataTypes.ENUM("SIMPLE", "VARIABLE"),
-                allowNull: false,
-                defaultValue: "SIMPLE",
               },
               //  NEW
               isDeleted: {
