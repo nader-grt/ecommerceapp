@@ -19,7 +19,7 @@ export interface IUserRegister {
   phone: string;
   email: string;
   password?: string;
-  role?: Role;
+  role?: Role | any;
 }
 
 export class userRepo extends IUserRepoInterface {

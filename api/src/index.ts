@@ -39,13 +39,6 @@ import getProductVariantsRoute from "./routes/productRoutes/GetProductWithVarian
 import getAllProductByCategoryIdRoute from "./routes/productRoutes/GetAllProductsFiltredByCategoryIdRoute.js";
 
 
-// Variant
-import getVariantProductRoute from "./routes/VariantProductRoute/GetVariantProductRoute.js";
-import listVariantProductRoute from "./routes/VariantProductRoute/ListVariantProductRoute.js";
-import convertVariantRoute from "./routes/VariantProductRoute/ConvertProductToVariableRoute.js";
-import addVariantProductRoute from "./routes/VariantProductRoute/CreateVariantsProductRoute.js";
-import updateVariantProductRoute from "./routes/VariantProductRoute/UpdateVariantForProductRoute.js";
-import deleteVariantProductRoute from "./routes/VariantProductRoute/DeleteVariantForProductRoute.js";
 
 //category
 import createCategoryRoute from "./routes//categoryRoute/createCategoryRoute.js";
@@ -79,29 +72,10 @@ import getSupplierRoute from  "./routes/SupplierRoute/GetSupplierRoute.js"
 
 //Secretary
 
-//company 
-
-import createCompanyRoute from  "./routes/CompanyRoute/CreateCompanyRoute.js"
-import updateCompanyRoute from  "./routes/CompanyRoute/UpdateCompanyRoute.js"
-import deleteCompanyRoute from  "./routes/CompanyRoute/DeleteCompanyRoute.js"
-import listCompanyRoute from  "./routes/CompanyRoute/ListCompanyRoute.js"
-import getCompanyRoute from  "./routes/CompanyRoute/GetCompanyRoute.js"
 
 
-// OWNER FILES 
-import listOwnersRoute from  "./routes/CompanyRoute/GetCompanyOwnersRoute.js"
-//Inventorie
 
-import createInventorieRoute from  "./routes/InventorieRoute/CreateInventorieRoute.js"
-import addStockInventorieRoute from  "./routes/InventorieRoute/AddStockInventorieRoute.js"
-import listInventorieRoute from  "./routes/InventorieRoute/ListInventorieRoute.js"
-import getInventorieRoute from  "./routes/InventorieRoute/GetInventorieRoute.js"
 
-//WareHouse
-
-import createWareHouseRoute from  "./routes/WareHouseRoute/CreateWareHouseRoute.js"
-import listWareHouseRoute from  "./routes/WareHouseRoute/ListWareHouseRoute.js"
-import getWareHouseRoute from  "./routes/WareHouseRoute/GetWareHouseRoute.js"
 
 
 import createSecretaryRoute from  "./routes/SecretaryRoute/CreateSecretaryRoute.js"
@@ -160,35 +134,15 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 
 
-//company
-
-
-app.use("/api", listCompanyRoute);
-app.use("/api", getCompanyRoute);
-app.use("/api", updateCompanyRoute);
-app.use("/api", deleteCompanyRoute);
-app.use("/api",createCompanyRoute);
-
-
-//OWNERS  
-
-app.use("/api",listOwnersRoute)
-
-
-//warehouse 
-
-app.use("/api", listWareHouseRoute);
-app.use("/api", createWareHouseRoute);
-app.use("/api",getWareHouseRoute)
 
 
 
-//Inventorie
 
-app.use("/api", createInventorieRoute);
-app.use("/api",addStockInventorieRoute)
-app.use("/api", listInventorieRoute);
-app.use("/api",getInventorieRoute)
+
+
+
+
+
 // user + profile
 app.use("/api", createUserAddressByAdminRoutes);
 app.use("/api",listUserAddressByAdminRoutes)
@@ -225,16 +179,7 @@ app.use("/api",getProductVariantsRoute)  ;
 //app.use("/api",getProductRoute)  ;
 app.use("/api",getAllProductByCategoryIdRoute) ;
 
-//  Variant + product 
 
-
-
-app.use("/api",getVariantProductRoute)
-app.use("/api",listVariantProductRoute)
-app.use("/api",convertVariantRoute)
-app.use("/api",addVariantProductRoute)
-app.use("/api",updateVariantProductRoute)
-app.use("/api",deleteVariantProductRoute)
 
 
 
@@ -321,26 +266,7 @@ app.use("/api",refreshTokenRoute)
 const PORT = 4000;
 
 
-// async function startServer() {
-//   try {
-  
-//     await sequelize.authenticate();
-//     console.log("Database connected");
 
-  
-//     await sequelize.sync();
-//     console.log("Database synced");
-
-   
-//     app.listen(PORT, () => {
-//       console.log(`Server running on http://localhost:${PORT}`);
-//     });
-
-//   } catch (err) {
-//     console.error("Error starting server:", err);
-//     process.exit(1); 
-//   }
-// }
 
 async function startServer() {
   try {

@@ -9,6 +9,7 @@ export interface IUpdateUserProfileDTO {
   address: string;
   phone: string;
   city: string;
+  role?:any ;
 
 }
 
