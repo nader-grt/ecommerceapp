@@ -38,24 +38,24 @@ const dataProvider: any = {
   const { json } = await httpclientService(url);
 
 
-  if (resource === "companies") {
-    return adaptListCompanies(json);
-  }
+  // if (resource === "companies") {
+  //   return adaptListCompanies(json);
+  // }
 
   //  =========================
   //  ADD THIS BLOCK HERE
   //  =========================
-  if (resource === "owners") {
-    const records = json?.data || [];
+  // if (resource === "owners") {
+  //   const records = json?.data || [];
 
-    return {
-      data: records.map((item: any) => ({
-        ...item,
-        id: item.id,
-      })),
-      total: records.length,
-    };
-  }
+  //   return {
+  //     data: records.map((item: any) => ({
+  //       ...item,
+  //       id: item.id,
+  //     })),
+  //     total: records.length,
+  //   };
+  // }
 
   if (resource === "categories") {
     const query = {
@@ -127,46 +127,46 @@ const dataProvider: any = {
       return adaptUpdateProductWithVariant(json);
     }
    
-    //warehouse one 
-    if (resource === "warehouses") {
-      const { json } = await httpclientService(
-        `${apiUrl}/warehouses/${params.id}`
-      );
+    // //warehouse one 
+    // if (resource === "warehouses") {
+    //   const { json } = await httpclientService(
+    //     `${apiUrl}/warehouses/${params.id}`
+    //   );
     
-      return adaptOneWarehouse(json);
-    }
+    //   return adaptOneWarehouse(json);
+    // }
 
-    if (resource === "inventories") {
+    // if (resource === "inventories") {
 
-      //  HERE
-      const urlParams = new URLSearchParams(window.location.search);
+    //   //  HERE
+    //   const urlParams = new URLSearchParams(window.location.search);
   
-      const variantId = urlParams.get("variantId");
-      const warehouseId = urlParams.get("warehouseId");
+    //   const variantId = urlParams.get("variantId");
+    //   const warehouseId = urlParams.get("warehouseId");
   
-      const query = new URLSearchParams();
+    //   const query = new URLSearchParams();
   
-      if (variantId) query.append("variantId", variantId);
-      if (warehouseId) query.append("warehouseId", warehouseId);
+    //   if (variantId) query.append("variantId", variantId);
+    //   if (warehouseId) query.append("warehouseId", warehouseId);
   
-      const url = `${apiUrl}/${resource}/${params.id}?${query.toString()}`;
+    //   const url = `${apiUrl}/${resource}/${params.id}?${query.toString()}`;
   
-      const { json } = await httpclientService(url);
+    //   const { json } = await httpclientService(url);
   
-      return adaptObject(json.data);
-    }
+    //   return adaptObject(json.data);
+    // }
   
 
     
    
-    if (resource === "companies") {
+    // if (resource === "companies") {
         
-      console.log("*****  ", `${apiUrl}/${resource}/${params.id}`)
-      const { json } = await httpclientService(
-        `${apiUrl}/${resource}/${params.id}`
-      );
-      return adaptOneCompany(json);
-    }
+    //   console.log("*****  ", `${apiUrl}/${resource}/${params.id}`)
+    //   const { json } = await httpclientService(
+    //     `${apiUrl}/${resource}/${params.id}`
+    //   );
+    //   return adaptOneCompany(json);
+    // }
 
                
     const { json } = await httpclientService(

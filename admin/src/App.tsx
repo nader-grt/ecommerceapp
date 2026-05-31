@@ -52,7 +52,7 @@ const App = () => {
              {...themes}
             >
           
-
+{/* 
           <Resource
       name="companies"
       list={ListCompany}
@@ -65,9 +65,9 @@ const App = () => {
       name="owners"
       list={OwnersCompanyList}
     
-    />
+    /> */}
 
-<Resource
+{/* <Resource
       name="inventories"
       list={ListInventorie}
       create={CreateInventorie}
@@ -81,7 +81,7 @@ const App = () => {
       create={CreateWareHouse}
       edit={EditWareHouse}
       show={ShowWareHouse}
-    />
+    /> */}
           <Resource
     name="users"
     list={ListUsers}
@@ -115,10 +115,7 @@ const App = () => {
   edit={EditProduct}
   />
 
-<Resource
-  name="variants"
-  create={CreateVariant}
-/>
+
               <Resource name="dashboard"  />
             </Admin>
           }

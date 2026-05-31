@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 import PeopleIcon from "@mui/icons-material/People";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import GroupIcon from "@mui/icons-material/Group";
+
 import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import StoreIcon from "@mui/icons-material/Store";
@@ -12,9 +12,7 @@ import CategoryIcon from "@mui/icons-material/Category";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import HomeIcon from "@mui/icons-material/Home";
 import ViewWeekIcon from "@mui/icons-material/ViewWeek";
-import BusinessIcon from "@mui/icons-material/Business";
-import WarehouseIcon from "@mui/icons-material/Warehouse";
-import Inventory2Icon from "@mui/icons-material/Inventory2";
+
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 
@@ -47,31 +45,7 @@ const MyMenu = () => {
     <Menu>
       <Menu.Item to="/" primaryText="Dashboard" leftIcon={<DashboardIcon />} />
 
-      <Menu.Item
-        to="/companies"
-        primaryText="Companies"
-        leftIcon={<BusinessIcon />}
-      />
-         <Menu.Item
-        to="/owners"
-        primaryText="Company Owners"
-        leftIcon={<BusinessIcon />}
-      />
-
-      <Menu.Item
-        to="/warehouses"
-        primaryText="WareHouses"
-        leftIcon={<WarehouseIcon />}
-      />
-      <Menu.Item
-        to="/inventories"
-        primaryText="Inventory"
-        leftIcon={<Inventory2Icon />}
-      />
-
-      <Menu.Item to="/users" primaryText="Users" leftIcon={<GroupIcon />} />
-
-      {/* Employees Dropdown */}
+  
       <ListItemButton
         onClick={handleClick}
         sx={{
