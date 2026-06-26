@@ -247,7 +247,10 @@ const dataProvider: any = {
   },
 
   create: async (resource: any, params: any) => {
+
+    console.log("rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",resource)
     if (resource === "categories") {
+      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeeeeeeeeeeeeeeeeeeeerty  ")
       const { json } = await httpclientService(`${apiUrl}/categories`, {
         method: "POST",
         body: JSON.stringify(params.data),
@@ -401,7 +404,7 @@ const dataProvider: any = {
     // if (resource === "products") {
     //   const data = params.data;
     
-    //   console.log("🔥 REAL DATA:", data);
+    //   console.log(" REAL DATA:", data);
     
     //   const formData = new FormData();
     
@@ -415,7 +418,7 @@ const dataProvider: any = {
     //   formData.append("type", data.type ?? "VARIABLE");
     
     //   // ===============================
-    //   // 🔥 VARIANTS (FIX IMPORTANT)
+    //   //  VARIANTS (FIX IMPORTANT)
     //   // ===============================
     //   const variants =
     //     typeof data.variants === "string"
@@ -425,7 +428,7 @@ const dataProvider: any = {
     //   formData.append("variants", variants);
     
     //   // ===============================
-    //   // 🔥 IMAGE FIX (react-admin format)
+    //   //  IMAGE FIX (react-admin format)
     //   // ===============================
     //   const file = data?.image?.rawFile;
     

@@ -13,21 +13,12 @@ import dataProvider from "./core/providers/dataProvider";
 
 import { EditCategorie, ListCategories } from "./modules/categories";
 import { CreateUser, EditUser, ListUsers } from "./modules/users";
-import { ListWeekDays, CreateWeekDay } from "./modules/weekDay";
+
 import { CreateProduct, EditProduct, ListProducts } from "./modules/products";
 import { CreateUserAddress, EditUserAddress, ListUserAddress, ShowUserAddress } from "./modules/userAddress";
-import { CreateCompany, EditCompany, ListCompany, ShowCompany } from "./modules/company";
-import ListWareHouses from "./modules/WareHouses/ListWareHouses";
-import CreateWareHouse from "./modules/WareHouses/CreateWareHouse";
-import EditWareHouse from "./modules/WareHouses/EditWareHouse";
-import ShowWareHouse from "./modules/WareHouses/ShowWareHouse";
-import { ListInventorie } from "./modules/Inventory/list/ListInventorie";
-import { ShowInventorie } from "./modules/Inventory/ShowInventorie";
-import { EditInventorie } from "./modules/Inventory/EditInventorie";
-import { CreateInventorie } from "./modules/Inventory/CreateInventorie";
-import { CreateVariant } from './modules/variantProduct/CreateVariant';
+
 import { CreateCategorie } from "./modules/categories/CreateCategorie";
-import { OwnersCompanyList } from "./modules/OwnerCompany/OwnersCompanyList";
+
 import Dashboard from "./dashboard/Dashboard";
 
 
@@ -52,36 +43,7 @@ const App = () => {
              {...themes}
             >
           
-{/* 
-          <Resource
-      name="companies"
-      list={ListCompany}
-      create={CreateCompany}
-      edit={EditCompany}
-      show={ShowCompany}
-    />
 
-<Resource
-      name="owners"
-      list={OwnersCompanyList}
-    
-    /> */}
-
-{/* <Resource
-      name="inventories"
-      list={ListInventorie}
-      create={CreateInventorie}
-      edit={EditInventorie}
-      show={ShowInventorie}
-    />
-
-<Resource
-      name="warehouses"
-      list={ListWareHouses}
-      create={CreateWareHouse}
-      edit={EditWareHouse}
-      show={ShowWareHouse}
-    /> */}
           <Resource
     name="users"
     list={ListUsers}

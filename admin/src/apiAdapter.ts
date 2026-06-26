@@ -113,57 +113,6 @@ export const adaptListProducts = (json: any) => {
   };
 };
 
-// export const adaptUserAddresses = (json: any) => {
-//   const users = json?.data || [];
-
-//   const records = users.flatMap((user: any) =>
-//     user.addresses.map((addr: any, index: number) => ({
-//       // id: `${user.id}-${index}`, // id
-//       id: `${user.id}`,
-//       // userId: user.id,
-//       firstName: user.firstName || "",
-//       lastName: user.lastName || "",
-//       email: user.email || "",
-//       phone: user.phone || "",
-
-//       street: addr.street || "",
-//       city: addr.city || "",
-//       country: addr.country || "",
-//       zipCode: addr.zipeCode || 0,
-//     }))
-//   );
-
-//   return {
-//     data: records,
-//     total: records.length,
-//   };
-// };
-/*
-export const adaptUserAddresses = (json: any) => {
-  const users = json?.data || [];
-
-  const records = users.flatMap((user: any) =>
-    user.addresses.map((addr: any, index: number) => ({
-      id: `${user.id}-${index}`, // ✅ UNIQUE ID per row
-      userId: user.id, // optional but useful
-
-      firstName: user.firstName || "",
-      lastName: user.lastName || "",
-      email: user.email || "",
-      phone: user.phone || "",
-
-      street: addr.street || "",
-      city: addr.city || "",
-      country: addr.country || "",
-      zipCode: addr.zipeCode || 0,
-    }))
-  );
-
-  return {
-    data: records,
-    total: records.length,
-  };
-};*/
 
 export const adaptUserAddresses = (json: any) => {
   const users = json?.data || [];
@@ -285,26 +234,6 @@ export const adaptListProductByCategory1 = (json: any) => {
     total: records.length,
   };
 };
-/*
-export const adaptListProductByCategory = (json: any) => {
-  const products = json?.data?.products || [];
-
-  const records = products.map((p: any) => ({
-    id: p.id, //  FIX هنا
-
-    name: p.nameProduct || "",
-    price: p.priceProduct || 0,
-    urlImage: p.urlImage || "",
-    categoryId: p.categoryId || null,
-    supplierId: p.supplierId || null,
-    variants: Array.isArray(p.variants) ? p.variants : [],
-  }));
-
-  return {
-    data: records,
-    total: records.length,
-  };
-};*/
 
 
 
@@ -480,33 +409,7 @@ export const adaptListCategories = (json: any) => {
 
 
 
-// export const adaptListCategories = (json: any) => {
-//   const raw = json?.data;
 
-//   // =========================
-//   // CASE 1: backend returns { data: [...] }
-//   // =========================
-//   let records = [];
-
-//   if (Array.isArray(raw)) {
-//     records = raw;
-//   } else if (Array.isArray(raw?.data)) {
-//     records = raw.data;
-//   } else {
-//     records = [];
-//   }
-
-//   return {
-//     data: records.map((cat: any) => ({
-//       id: cat.id,
-//       name: cat.name,
-//     })),
-//     total: records.length,
-//   };
-// };
-
-
-//warehouse 
 
 export const adaptWarehouses = (json: any) => {
   const records = json?.data || [];
