@@ -8,7 +8,6 @@ export function verifyRefreshToken(
   next: NextFunction
 ) {
   const refreshToken = req.cookies?.refreshToken;
-  console.log("Refresh token from cookie:ininallll 0 ", refreshToken  , "\n ");
   if (!refreshToken) {
     return res.status(401).json({
       message: "Refresh token missing"

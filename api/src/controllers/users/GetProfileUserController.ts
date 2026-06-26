@@ -21,24 +21,31 @@ export default class GetProfileUserController extends BaseController
        protected async executeImpl(req: RequestAuth, res: Response): Promise<any> {
            
 
+
+                    console.log("uuuuuuuuuuuuuuuuuuuuu  ",req.user)
               const userId = Number(req.user!.id);
+
 
               const result = await this._getProfileUser.execute(userId);
           
+
               try {
               if (!result.success) {
+
+
                 return this.fail(res, result.message);
               }
           
+          //    return this.ok(res,"her ")
               return this.resultValue(res, "profile  with success ", {
-                id : result.user[0].id,
-                firstName: result.user[0].firstName,
-                lastName: result.user[0].lastName,
-                email: result.user[0].email,
-                phone: result.user[0].phone,
+              //  id : result.user.id,
+                firstName: result.user.firstName,
+                lastName: result.user.lastName,
+                email: result.user.email,
+                phone: result.user.phone,
               });
-            } catch (err) {
-              return this.fail(res, "unexpected error");
+            } catch (err:any) {
+              return this.fail(res, "unexpected error here error ");
             }
        }
 }

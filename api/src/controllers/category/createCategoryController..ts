@@ -14,6 +14,9 @@ export default class CreateCategoryController extends BaseController {
     try {
       const { name } = req.body;
 
+
+
+      console.log("naaaaaaaaaaaaame ",name)
       // ======================
       // 1. VALIDATION
       // ======================

@@ -24,7 +24,6 @@ export function verifyToken(
 
   const token = headerToken || cookieToken;
 
-console.log("token verfy token step 2 ",token)
 
   if (!token) {
     return res
